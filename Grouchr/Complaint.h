@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface Complaint : NSObject{
-    NSInteger* venueid;
-    NSInteger* userid;
-    NSInteger* submissionid;
+    NSInteger venueid;
+    NSInteger userid;
+    NSInteger submissionid;
     
     NSString* venuename;
     NSString* username;
     NSString* message;
     
-    NSInteger* shakepoints;
-    NSInteger* childshakepoints;
-    NSInteger* childcount;
+    NSInteger shakepoints;
+    NSInteger childshakepoints;
+    NSInteger childcount;
     
     NSString* imageurl_small;
     NSString* imageurl_medium;
@@ -28,22 +28,24 @@
     
 }
 
-@property(readwrite) NSInteger* venueid;
-@property(readwrite) NSInteger* userid;
-@property(readwrite) NSInteger* submissionid;
+@property(readwrite) NSInteger venueid;
+@property(readwrite) NSInteger userid;
+@property(readwrite) NSInteger submissionid;
 
 @property(copy,readwrite) NSString* venuename;
 @property(copy,readwrite) NSString* username;
 @property(copy,readwrite) NSString* message;
 
-@property(readwrite) NSInteger* shakepoints;
-@property(readwrite) NSInteger* childshakepoints;
-@property(readwrite) NSInteger* childcount;
+@property(readwrite) NSInteger shakepoints;
+@property(readwrite) NSInteger childshakepoints;
+@property(readwrite) NSInteger childcount;
 
 @property(copy,readwrite) NSString* imageurl_small;
 @property(copy,readwrite) NSString* imageurl_medium;
 @property(copy,readwrite) NSString* imageurl_large;
 @property(copy,readwrite) NSString* imageurl_orig;
+
+- (NSString*) toString;
 
 //- (NSInteger*) venueid;
 //- (NSInteger*) userid;

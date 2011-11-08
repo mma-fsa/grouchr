@@ -12,8 +12,8 @@
 
 + (NSString*) buildJsonRequest:(NSString *)requestType :(NSString *)payloadStr{
     //TODO:This needs to come from someplace (and prob be class vars?)
-    NSString* username = @"GrouchrWeb";
-    NSString* token = @"256cbecc-300e-486c-985c-3480b5767fe7";
+    static NSString* username = @"GrouchrWeb";
+    static NSString* token = @"256cbecc-300e-486c-985c-3480b5767fe7";
     
     NSString* reqType = [NSString stringWithFormat:@"\"REQUEST_TYPE\":\"%@\"",requestType];
     NSString* userinfo = [NSString stringWithFormat:@"\"USER_INFO\":{\"USERNAME\":\"%@\",\"TOKEN\":\"%@\"}",username,token];

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+#import "DataFetcher.h"
+#import "DataFetcherResponseHandler.h"
+
+@interface FirstViewController : UIViewController{
+    DataFetcherResponseHandler* handler;
+    DataFetcher* fetcher;
+}
 
 @end

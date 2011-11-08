@@ -27,4 +27,10 @@
 @synthesize imageurl_large;
 @synthesize imageurl_orig;
 
+- (NSString*) toString
+{
+    NSString* retStr = [NSString stringWithFormat:@"ID:%i, ChildCount:%i, Venue:%@, User:%@, Message:%@, ShakePoints:%i", submissionid, childcount,venuename, username, message,shakepoints];
+    
+    return retStr;
+}
 @end

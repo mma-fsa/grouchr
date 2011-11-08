@@ -52,6 +52,7 @@
 		836BA73F1468A9E600328092 /* ComplaintParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA7381468A9E600328092 /* ComplaintParser.m */; };
 		836BA7401468A9E600328092 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA73A1468A9E600328092 /* DataFetcher.m */; };
 		836BA7411468A9E600328092 /* GrouchrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA73C1468A9E600328092 /* GrouchrAPI.m */; };
+		836E29F21469A6FF00E611F2 /* DataFetcherResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,8 @@
 		836BA73A1468A9E600328092 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		836BA73B1468A9E600328092 /* GrouchrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrouchrAPI.h; sourceTree = "<group>"; };
 		836BA73C1468A9E600328092 /* GrouchrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrouchrAPI.m; sourceTree = "<group>"; };
+		836E29F01469A6FE00E611F2 /* DataFetcherResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcherResponseHandler.h; sourceTree = "<group>"; };
+		836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcherResponseHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				836BA73A1468A9E600328092 /* DataFetcher.m */,
 				836BA73B1468A9E600328092 /* GrouchrAPI.h */,
 				836BA73C1468A9E600328092 /* GrouchrAPI.m */,
+				836E29F01469A6FE00E611F2 /* DataFetcherResponseHandler.h */,
+				836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				836BA73F1468A9E600328092 /* ComplaintParser.m in Sources */,
 				836BA7401468A9E600328092 /* DataFetcher.m in Sources */,
 				836BA7411468A9E600328092 /* GrouchrAPI.m in Sources */,
+				836E29F21469A6FF00E611F2 /* DataFetcherResponseHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
