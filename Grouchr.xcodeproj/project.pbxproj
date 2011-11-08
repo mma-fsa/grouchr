@@ -158,6 +158,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27E4F0B71468D6F90016111D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				836BA7421468A9FF00328092 /* API */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		27E4F0B91468D6FF0016111D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				836BA6CA1468A2CB00328092 /* FirstViewController.h */,
+				836BA6CB1468A2CB00328092 /* FirstViewController.m */,
+				836BA6D11468A2CB00328092 /* SecondViewController.h */,
+				836BA6D21468A2CB00328092 /* SecondViewController.m */,
+				836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */,
+				836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		27E4F0BA1468D70D0016111D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				836BA7351468A9E600328092 /* Complaint.h */,
+				836BA7361468A9E600328092 /* Complaint.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		27E4F0BB1468D71B0016111D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				836BA6CD1468A2CB00328092 /* first.png */,
+				836BA6CF1468A2CB00328092 /* first@2x.png */,
+				836BA6D41468A2CB00328092 /* second.png */,
+				836BA6D61468A2CB00328092 /* second@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		836BA6A31468A2CB00328092 = {
 			isa = PBXGroup;
 			children = (
@@ -193,19 +234,11 @@
 		836BA6B81468A2CB00328092 /* Grouchr */ = {
 			isa = PBXGroup;
 			children = (
-				836BA7421468A9FF00328092 /* API */,
+				27E4F0BA1468D70D0016111D /* Data */,
+				27E4F0B91468D6FF0016111D /* View */,
+				27E4F0B71468D6F90016111D /* Model */,
 				836BA6C11468A2CB00328092 /* AppDelegate.h */,
 				836BA6C21468A2CB00328092 /* AppDelegate.m */,
-				836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */,
-				836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */,
-				836BA6CA1468A2CB00328092 /* FirstViewController.h */,
-				836BA6CB1468A2CB00328092 /* FirstViewController.m */,
-				836BA6CD1468A2CB00328092 /* first.png */,
-				836BA6CF1468A2CB00328092 /* first@2x.png */,
-				836BA6D11468A2CB00328092 /* SecondViewController.h */,
-				836BA6D21468A2CB00328092 /* SecondViewController.m */,
-				836BA6D41468A2CB00328092 /* second.png */,
-				836BA6D61468A2CB00328092 /* second@2x.png */,
 				836BA6B91468A2CB00328092 /* Supporting Files */,
 			);
 			path = Grouchr;
@@ -214,6 +247,7 @@
 		836BA6B91468A2CB00328092 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27E4F0BB1468D71B0016111D /* images */,
 				836BA6BA1468A2CB00328092 /* Grouchr-Info.plist */,
 				836BA6BB1468A2CB00328092 /* InfoPlist.strings */,
 				836BA6BE1468A2CB00328092 /* main.m */,
@@ -300,8 +334,6 @@
 			children = (
 				836BA7331468A9E600328092 /* APIResponseParser.h */,
 				836BA7341468A9E600328092 /* APIResponseParser.m */,
-				836BA7351468A9E600328092 /* Complaint.h */,
-				836BA7361468A9E600328092 /* Complaint.m */,
 				836BA7371468A9E600328092 /* ComplaintParser.h */,
 				836BA7381468A9E600328092 /* ComplaintParser.m */,
 				836BA7391468A9E600328092 /* DataFetcher.h */,
@@ -531,6 +563,7 @@
 				836BA6DC1468A2CB00328092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
