@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GrouchrModelDelegate.h"
 
 @interface GrouchrModelController : NSObject<CLLocationManagerDelegate> {
-    CLLocationManager* locationManager; {
-    
+    CLLocationManager* locationManager;
+    id<GrouchrModelDelegate> delegate;
 }
+
+@property (nonatomic, retain) CLLocation* lastLocation;
 
 @end

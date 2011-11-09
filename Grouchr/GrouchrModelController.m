@@ -36,12 +36,8 @@
     
     self.lastLocation = newLocation;
  
-    //dispatch messages to observers that care the GPS 
-    //location has changed
-    
-    NSNotificationCenter* defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter postNotification: [NSNotification notificationWithName: @"LOCATION_CHANGED" object:self]];
-    
+    //send message to delegate that our location has changes
+    [delegate didLocationChange];
 }
 
 @end
