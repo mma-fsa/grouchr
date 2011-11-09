@@ -8,6 +8,10 @@
 
 #import "FirstViewController.h"
 
+#import "GrouchrAPI.h"
+#import "DataFetcher.h"
+#import "DataFetcherResponseHandler.h"
+
 @implementation FirstViewController
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +38,20 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    NSLog(@"applicationDidBecomeActive");
+    
+    NSString* urlStr = @"http://tomcat.jdrotos.dyndns.org:8080/GrouchrServer/API";
+    NSString* payloadStr = @"";
+    NSString* reqType = @"NEWCOMPLAINTS";
+    NSString* reqStr = [GrouchrAPI buildJsonRequest:reqType : payloadStr];
+    
+    NSLog(@"Manual allocs..");
+    handler = [[DataFetcherResponseHandler alloc] init];
+    fetcher = [[DataFetcher alloc] init];
+    
+    NSLog(@"Make call");
+    [fetcher postData:urlStr :reqStr :handler];
 }
 
 - (void)viewDidAppear:(BOOL)animated

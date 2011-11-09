@@ -7,20 +7,13 @@
 //
 
 #import "DataFetcher.h"
-#import "ASIHTTPRequest.h"
 
 @implementation DataFetcher
-+ (NSString*) postData:(NSString *)url :(NSString *)reqStr{
+- (IBAction) postData:(NSString *)url :(NSString *)reqStr: (NSObject*) respHandler{
     NSURL* nsurl = [NSURL URLWithString:url];
     ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:nsurl];
     [request appendPostData:[reqStr dataUsingEncoding:NSUTF8StringEncoding]];
-    [request startSynchronous];
-    NSError* error = [request error];
-    if(!error){
-        NSString* response = [request responseString];
-        return response;
-    }
-    return @"";
-    
+    [request setDelegate:respHandler];
+    [request startAsynchronous];
 }
 @end

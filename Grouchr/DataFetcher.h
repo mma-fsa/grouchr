@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASIHTTPRequest.h"
 
 @interface DataFetcher : NSObject
-+ (NSString*) postData:(NSString*) url: (NSString*)reqStr;
+- (IBAction) postData:(NSString*) url: (NSString*)reqStr :(NSObject*)respHandler;
 @end

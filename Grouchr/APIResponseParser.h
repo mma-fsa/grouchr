@@ -10,4 +10,5 @@
 
 @interface APIResponseParser : NSObject
     + (NSDictionary*) parseAPIResponse:(NSString*) respStr;
++(NSArray*) parseAPIResponseComplaintList:(NSString*) respStr;
 @end
