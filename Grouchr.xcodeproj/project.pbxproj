@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E1DC6E1468D9AE007D63F8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1DC6D1468D9AE007D63F8 /* CoreLocation.framework */; };
+		27E1DC72146A1F5A007D63F8 /* GrouchrModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E1DC71146A1F5A007D63F8 /* GrouchrModelController.m */; };
 		836BA6B31468A2CB00328092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836BA6B21468A2CB00328092 /* UIKit.framework */; };
 		836BA6B51468A2CB00328092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836BA6B41468A2CB00328092 /* Foundation.framework */; };
 		836BA6B71468A2CB00328092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836BA6B61468A2CB00328092 /* CoreGraphics.framework */; };
@@ -55,6 +57,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27E1DC6D1468D9AE007D63F8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27E1DC70146A1F5A007D63F8 /* GrouchrModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrouchrModelController.h; sourceTree = "<group>"; };
+		27E1DC71146A1F5A007D63F8 /* GrouchrModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrouchrModelController.m; sourceTree = "<group>"; };
 		836BA6AE1468A2CB00328092 /* Grouchr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grouchr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836BA6B21468A2CB00328092 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		836BA6B41468A2CB00328092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E1DC6E1468D9AE007D63F8 /* CoreLocation.framework in Frameworks */,
 				836BA7321468A76500328092 /* libz.dylib in Frameworks */,
 				836BA7301468A75400328092 /* MobileCoreServices.framework in Frameworks */,
 				836BA72E1468A74800328092 /* SystemConfiguration.framework in Frameworks */,
@@ -162,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				836BA7421468A9FF00328092 /* API */,
+				27E1DC70146A1F5A007D63F8 /* GrouchrModelController.h */,
+				27E1DC71146A1F5A007D63F8 /* GrouchrModelController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				836BA7311468A76500328092 /* libz.dylib */,
+				27E1DC6D1468D9AE007D63F8 /* CoreLocation.framework */,
 				836BA72F1468A75400328092 /* MobileCoreServices.framework */,
 				836BA72D1468A74800328092 /* SystemConfiguration.framework */,
 				836BA72B1468A73900328092 /* CFNetwork.framework */,
@@ -442,6 +451,7 @@
 				836BA73F1468A9E600328092 /* ComplaintParser.m in Sources */,
 				836BA7401468A9E600328092 /* DataFetcher.m in Sources */,
 				836BA7411468A9E600328092 /* GrouchrAPI.m in Sources */,
+				27E1DC72146A1F5A007D63F8 /* GrouchrModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
