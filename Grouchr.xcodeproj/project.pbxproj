@@ -53,6 +53,11 @@
 		836BA7401468A9E600328092 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA73A1468A9E600328092 /* DataFetcher.m */; };
 		836BA7411468A9E600328092 /* GrouchrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA73C1468A9E600328092 /* GrouchrAPI.m */; };
 		836E29F21469A6FF00E611F2 /* DataFetcherResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */; };
+		836E29F6146B088200E611F2 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29F5146B088200E611F2 /* Venue.m */; };
+		836E29F9146B09DF00E611F2 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29F8146B09DF00E611F2 /* UserInfo.m */; };
+		836E29FC146B0C8200E611F2 /* VenueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29FB146B0C8200E611F2 /* VenueParser.m */; };
+		836E29FF146B0FE400E611F2 /* UserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29FE146B0FE400E611F2 /* UserInfoParser.m */; };
+		836E2A03146B258900E611F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E2A02146B258900E611F2 /* Credentials.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +146,16 @@
 		836BA73C1468A9E600328092 /* GrouchrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrouchrAPI.m; sourceTree = "<group>"; };
 		836E29F01469A6FE00E611F2 /* DataFetcherResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcherResponseHandler.h; sourceTree = "<group>"; };
 		836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcherResponseHandler.m; sourceTree = "<group>"; };
+		836E29F4146B088200E611F2 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		836E29F5146B088200E611F2 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		836E29F7146B09DF00E611F2 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		836E29F8146B09DF00E611F2 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		836E29FA146B0C8200E611F2 /* VenueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueParser.h; sourceTree = "<group>"; };
+		836E29FB146B0C8200E611F2 /* VenueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueParser.m; sourceTree = "<group>"; };
+		836E29FD146B0FE400E611F2 /* UserInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoParser.h; sourceTree = "<group>"; };
+		836E29FE146B0FE400E611F2 /* UserInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoParser.m; sourceTree = "<group>"; };
+		836E2A01146B258900E611F2 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		836E2A02146B258900E611F2 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +202,12 @@
 			children = (
 				836BA7351468A9E600328092 /* Complaint.h */,
 				836BA7361468A9E600328092 /* Complaint.m */,
+				836E29F4146B088200E611F2 /* Venue.h */,
+				836E29F5146B088200E611F2 /* Venue.m */,
+				836E29F7146B09DF00E611F2 /* UserInfo.h */,
+				836E29F8146B09DF00E611F2 /* UserInfo.m */,
+				836E2A01146B258900E611F2 /* Credentials.h */,
+				836E2A02146B258900E611F2 /* Credentials.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -335,10 +356,7 @@
 		836BA7421468A9FF00328092 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				836BA7331468A9E600328092 /* APIResponseParser.h */,
-				836BA7341468A9E600328092 /* APIResponseParser.m */,
-				836BA7371468A9E600328092 /* ComplaintParser.h */,
-				836BA7381468A9E600328092 /* ComplaintParser.m */,
+				836E2A00146B1C9A00E611F2 /* ResponseParsers */,
 				836BA7391468A9E600328092 /* DataFetcher.h */,
 				836BA73A1468A9E600328092 /* DataFetcher.m */,
 				836BA73B1468A9E600328092 /* GrouchrAPI.h */,
@@ -347,6 +365,21 @@
 				836E29F11469A6FF00E611F2 /* DataFetcherResponseHandler.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		836E2A00146B1C9A00E611F2 /* ResponseParsers */ = {
+			isa = PBXGroup;
+			children = (
+				836BA7331468A9E600328092 /* APIResponseParser.h */,
+				836BA7341468A9E600328092 /* APIResponseParser.m */,
+				836BA7371468A9E600328092 /* ComplaintParser.h */,
+				836BA7381468A9E600328092 /* ComplaintParser.m */,
+				836E29FA146B0C8200E611F2 /* VenueParser.h */,
+				836E29FB146B0C8200E611F2 /* VenueParser.m */,
+				836E29FD146B0FE400E611F2 /* UserInfoParser.h */,
+				836E29FE146B0FE400E611F2 /* UserInfoParser.m */,
+			);
+			name = ResponseParsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +481,11 @@
 				836BA7401468A9E600328092 /* DataFetcher.m in Sources */,
 				836BA7411468A9E600328092 /* GrouchrAPI.m in Sources */,
 				836E29F21469A6FF00E611F2 /* DataFetcherResponseHandler.m in Sources */,
+				836E29F6146B088200E611F2 /* Venue.m in Sources */,
+				836E29F9146B09DF00E611F2 /* UserInfo.m in Sources */,
+				836E29FC146B0C8200E611F2 /* VenueParser.m in Sources */,
+				836E29FF146B0FE400E611F2 /* UserInfoParser.m in Sources */,
+				836E2A03146B258900E611F2 /* Credentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Credentials.h"
+#import "Complaint.h"
+#import "UserInfo.h"
 
 @interface APIResponseParser : NSObject
     + (NSDictionary*) parseAPIResponse:(NSString*) respStr;
-+(NSArray*) parseAPIResponseComplaintList:(NSString*) respStr;
+
+    + (NSArray*) getComplaintList:(NSDictionary*) payload;
+
+    + (NSArray*) getVenueList:(NSDictionary*) payload;
+
+    + (Credentials*) getCredentials:(NSDictionary*) payload;
+
+    + (NSString*) getFailureCode:(NSDictionary*) payload;
+
+    + (UserInfo*) getUserInfo:(NSDictionary*) payload;
 @end

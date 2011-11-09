@@ -44,14 +44,32 @@
     NSString* urlStr = @"http://tomcat.jdrotos.dyndns.org:8080/GrouchrServer/API";
     NSString* payloadStr = @"";
     NSString* reqType = @"NEWCOMPLAINTS";
-    NSString* reqStr = [GrouchrAPI buildJsonRequest:reqType : payloadStr];
+    NSString* reqStr = [GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:reqType : payloadStr]];
+    
+    NSLog(@"Basic request:%@",reqStr);
+    
+    
+    NSLog(@"Login Payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"LOGIN" :[GrouchrAPI buildLoginPayload:@"User" :@"<password>"]]]);
+    NSLog(@"Authenticate Payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"AUTHENTICATE" :[GrouchrAPI buildAuthenticatePayload:@"User" :@"tok123"]]]);
+    NSLog(@"New user payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"NEWUSER" :[GrouchrAPI buildNewUserPayload:@"User" :@"Pass"]]]);
+    NSLog(@"Nearby payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"COMPLAINTS" :[GrouchrAPI buildNearbyComplaintsPayload:[NSNumber numberWithDouble:44.12345] : [NSNumber numberWithDouble:99.12345] :0]]]);
+    NSLog(@"UserComps payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERCOMPLAINTS" :[GrouchrAPI buildUserComplaintsPayload:@"whiskeyjoe" :0]]]);
+    NSLog(@"SingleComp payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"SINGLECOMPLAINT" :[GrouchrAPI buildSingleComplaintPayload:1]]]);
+    NSLog(@"GetThread payload:%@",[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"GETTHREAD" :[GrouchrAPI buildGetThreadPayload:1]]]);
+                               
     
     NSLog(@"Manual allocs..");
     handler = [[DataFetcherResponseHandler alloc] init];
     fetcher = [[DataFetcher alloc] init];
     
     NSLog(@"Make call");
-    [fetcher postData:urlStr :reqStr :handler];
+    [fetcher postData:urlStr :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"COMPLAINTS" :[GrouchrAPI buildNearbyComplaintsPayload:[NSNumber numberWithDouble:44.12345] : [NSNumber numberWithDouble:99.12345] :0]]] :handler];
+    
+    [fetcher postData:urlStr :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERCOMPLAINTS" :[GrouchrAPI buildUserComplaintsPayload:@"whiskeyjoe" :0]]] :handler];
+    
+    [fetcher postData:urlStr :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"SINGLECOMPLAINT" :[GrouchrAPI buildSingleComplaintPayload:1]]] :handler];
+    
+    [fetcher postData:urlStr :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"GETTHREAD" :[GrouchrAPI buildGetThreadPayload:1]]] :handler];
 }
 
 - (void)viewDidAppear:(BOOL)animated

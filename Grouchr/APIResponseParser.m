@@ -9,6 +9,8 @@
 #import "APIResponseParser.h"
 #import "SBJson.h"
 #import "ComplaintParser.h"
+#import "VenueParser.h"
+#import "UserInfoParser.h"
 
 @implementation APIResponseParser
 +(NSDictionary*) parseAPIResponse:(NSString *)respStr{
@@ -17,21 +19,46 @@
     NSDictionary* resp = [jsonParser objectWithString:respStr];
     return resp;
 }
-+(NSArray*) parseAPIResponseComplaintList:(NSString*) respStr{
-    SBJsonParser* jsonParser = [[SBJsonParser alloc] init];
-    NSDictionary* resp = [jsonParser objectWithString:respStr];
-    NSDictionary* payload = [resp objectForKey:@"PAYLOAD"];
-    NSArray* compList = [payload objectForKey:@"COMPLAINT_LIST"];
+
++ (NSArray*) getComplaintList:(NSDictionary *)payload{
+    NSMutableArray* comps = [[NSMutableArray alloc] init];
+    NSArray *jsonComps = [payload objectForKey:@"COMPLAINT_LIST"];
     
-    ComplaintParser* cp = [[ComplaintParser alloc] init];
-    
-    for(NSDictionary* comp in compList){
-        
-        Complaint* c = [cp parseComplaint:comp]; 
-        
-        NSLog(@"%@", [c toString]);
+    for(NSDictionary* jsonComp in jsonComps){
+        [comps addObject:[ComplaintParser parseComplaint:jsonComp]];
     }
     
-    return compList;
+    return comps;
 }
+
++ (NSArray*) getVenueList:(NSDictionary *)payload{
+    NSMutableArray* venues = [[NSMutableArray alloc] init];
+    
+    NSArray *jsonVenues = [payload objectForKey:@"VENUE_LIST"];
+    
+    for(NSDictionary* jsonVenue in jsonVenues){
+        [venues addObject:[VenueParser parseVenue:jsonVenue]];
+    }
+    
+    return venues;
+}
+
+//Get the failure code from a login/auth request
++ (NSString*) getFailureCode:(NSDictionary*) payload{
+    return [payload objectForKey:@"FAILURE_CODE"];
+}
+
++ (Credentials*) getCredentials:(NSDictionary*) payload{
+    Credentials* creds = [[Credentials alloc] init];
+    
+    creds.username = [payload objectForKey:@"USERNAME"];
+    creds.token = [payload objectForKey:@"TOKEN"];
+    
+    return creds;
+}
+
++ (UserInfo*) getUserInfo:(NSDictionary *)payload{
+    return [UserInfoParser parseUserInfo:payload];
+}
+
 @end

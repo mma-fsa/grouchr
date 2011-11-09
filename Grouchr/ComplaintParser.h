@@ -10,5 +10,5 @@
 #import "Complaint.h"
 
 @interface ComplaintParser : NSObject
-- (Complaint*) parseComplaint: (NSDictionary *)json;
++ (Complaint*) parseComplaint: (NSDictionary *)json;
 @end

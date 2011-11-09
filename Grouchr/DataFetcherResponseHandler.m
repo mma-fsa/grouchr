@@ -26,8 +26,8 @@
     responseString = [request responseString];
     NSLog(@"Response got!: %@",responseString);
     
-    NSLog(@"Attempt parse out complist...");
-    [APIResponseParser parseAPIResponseComplaintList:responseString];
+//    NSLog(@"Attempt parse out complist...");
+//    [APIResponseParser getComplaintList:[APIResponseParser parseAPIResponse:responseString]];
     
 }
 - (void) requestFailed:(ASIHTTPRequest *) request{

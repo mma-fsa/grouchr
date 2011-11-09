@@ -10,7 +10,7 @@
 #import "SBJson.h"
 
 @implementation ComplaintParser
-- (Complaint*) parseComplaint:(NSDictionary *)json
++ (Complaint*) parseComplaint:(NSDictionary *)json
 {
     Complaint* retComp = [[Complaint alloc] init];
     
@@ -43,13 +43,13 @@
     
     retComp.message = [msgDict objectForKey:@"MESSAGE"];
     
-//    if([msgDict objectForKey:@"IMAGE"] != nil){
-//        NSDictionary* imgDict = [msgDict objectForKey:@"IMAGE"];
-//        retComp.imageurl_small = [[imgDict objectForKey:@"SMALL"] objectForKey:@"URL"];
-//        retComp.imageurl_medium = [[imgDict objectForKey:@"MEDIUM"] objectForKey:@"URL"];
-//        retComp.imageurl_large = [[imgDict objectForKey:@"LARGE"] objectForKey:@"URL"];
-//        retComp.imageurl_orig = [[imgDict objectForKey:@"ORIGINAL"] objectForKey:@"URL"];
-//    }
+    if([msgDict objectForKey:@"IMAGE"] != nil){
+        NSDictionary* imgDict = [msgDict objectForKey:@"IMAGE"];
+        retComp.imageurl_small = [[imgDict objectForKey:@"SMALL"] objectForKey:@"URL"];
+        retComp.imageurl_medium = [[imgDict objectForKey:@"MEDIUM"] objectForKey:@"URL"];
+        retComp.imageurl_large = [[imgDict objectForKey:@"LARGE"] objectForKey:@"URL"];
+        retComp.imageurl_orig = [[imgDict objectForKey:@"ORIGINAL"] objectForKey:@"URL"];
+    }
     
     return retComp;
 }
