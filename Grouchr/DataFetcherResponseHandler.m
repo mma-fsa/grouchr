@@ -11,6 +11,10 @@
 
 @implementation DataFetcherResponseHandler
 
+@synthesize requestType;
+@synthesize statusCode;
+@synthesize statusMessage;
+@synthesize payload;
 @synthesize responseString;
 @synthesize error;
 
@@ -26,9 +30,11 @@
     responseString = [request responseString];
     NSLog(@"Response got!: %@",responseString);
     
-//    NSLog(@"Attempt parse out complist...");
-//    [APIResponseParser getComplaintList:[APIResponseParser parseAPIResponse:responseString]];
-    
+    NSDictionary* respDict = [APIResponseParser parseAPIResponse:responseString];
+    NSNumber *tNum = [respDict objectForKey:@"STATUS"];
+    statusCode = [tNum integerValue];
+    statusMessage = [respDict objectForKey:@"MESSAGE"];
+    payload = [respDict objectForKey:@"PAYLOAD"];
 }
 - (void) requestFailed:(ASIHTTPRequest *) request{
     error = [request error];

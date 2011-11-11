@@ -8,14 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
+#import "GrouchrModelDelegate.h"
 
 @interface DataFetcherResponseHandler : NSObject{
+    NSObject* delegate;
+    
+    NSString* requestType;
+    
+    NSInteger statusCode;
+    NSString* statusMessage;
+    NSDictionary* payload;
+    
     NSString* responseString;
     NSError* error;
 }
 
 @property(copy,readwrite) NSString* responseString;
 @property(copy,readwrite) NSError* error;
+@property(copy,readwrite) NSString* requestType;
+
+@property(readwrite) NSInteger statusCode;
+@property(copy,readwrite) NSString* statusMessage;
+@property(copy,readwrite) NSDictionary* payload;
 
 - (void) requestFinished:(ASIHTTPRequest *) request;
 - (void) requestFailed:(ASIHTTPRequest *) request;
