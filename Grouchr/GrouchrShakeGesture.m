@@ -88,9 +88,18 @@ static GrouchrShakeGesture* sharedInstance = nil;
 
 -(void) shakeGesture:(id)delegate {
 
-    shakes = 0;
+    shakesX = 0;
+    shakesY = 0;
+    shakesZ = 0;
+    
+    filteredX = 0;
+    filteredY = 0;
     filteredZ = 0;
+    
+    lastXPositive = YES;
+    lastYPositive = YES;
     lastZPositive = YES;
+    
     callbackDelegate = delegate;
     
     //set the callback for when the shake gesture's duration has elapsed
@@ -107,7 +116,11 @@ static GrouchrShakeGesture* sharedInstance = nil;
     UIAccelerometer* accell = [UIAccelerometer sharedAccelerometer];
     accell.delegate = nil;
     
-    self.lastScore = MAX(1, 2.0 * MAX(filteredZ, 1.0) * .75 * shakes);
+    float scoreX = MAX(1, 2.0 * MAX(filteredX, 1.0) * .75 * shakesX);
+    float scoreY = MAX(1, 2.0 * MAX(filteredY, 1.0) * .75 * shakesY);
+    float scoreZ = MAX(1, 2.0 * MAX(filteredZ, 1.0) * .75 * shakesZ);
+    
+    self.lastScore = MAX(MAX(scoreX, scoreY), MAX(scoreY, scoreZ));
     
     if(callbackDelegate) {
         [callbackDelegate didShakeGesture];
@@ -117,13 +130,27 @@ static GrouchrShakeGesture* sharedInstance = nil;
 -(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
     
     //record number of changes in direction
+    if (((lastXPositive && acceleration.x < 0) || 
+         (!lastXPositive && acceleration.x > 0)) && fabs(acceleration.x) > CHANGE_THRESHOLD) {
+        shakesX += 1; 
+        lastXPositive = !lastXPositive;
+    }
+    
+    if (((lastYPositive && acceleration.y < 0) || 
+         (!lastYPositive && acceleration.y > 0)) && fabs(acceleration.y) > CHANGE_THRESHOLD) {
+        shakesY += 1; 
+        lastYPositive = !lastYPositive;
+    }
+    
     if (((lastZPositive && acceleration.z < 0) || 
          (!lastZPositive && acceleration.z > 0)) && fabs(acceleration.z) > CHANGE_THRESHOLD) {
-        shakes += 1; 
+        shakesZ += 1; 
         lastZPositive = !lastZPositive;
     }
     
     //record average acceleration adjusted for gravity (low-pass filter)
+    filteredX = (fabs(acceleration.x) * FILTERING_FACTOR) + (filteredX * (1 - FILTERING_FACTOR));
+    filteredY = (fabs(acceleration.y) * FILTERING_FACTOR) + (filteredY * (1 - FILTERING_FACTOR));
     filteredZ = (fabs(acceleration.z) * FILTERING_FACTOR) + (filteredZ * (1 - FILTERING_FACTOR));
 }
 

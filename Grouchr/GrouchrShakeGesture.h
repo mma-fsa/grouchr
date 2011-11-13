@@ -11,8 +11,16 @@
 @interface GrouchrShakeGesture : NSObject<UIAccelerometerDelegate> {
     id callbackDelegate;
     
+    float filteredX;
+    float filteredY;
     float filteredZ;
-    int shakes;
+    
+    int shakesX;
+    int shakesY;
+    int shakesZ;
+    
+    BOOL lastXPositive;
+    BOOL lastYPositive;
     BOOL lastZPositive;
 }
 
@@ -21,6 +29,6 @@
 -(void) shakeGesture: (id) delegate; 
 -(void) didShakeGesture;
 
-@property (nonatomic, retain) float lastScore; 
+@property (nonatomic) float lastScore; 
 
 @end
