@@ -40,4 +40,10 @@
     [delegate didLocationChange];
 }
 
+- (void) startShakeGesture: (NSNumber*) durationInSeconds autoStop: (BOOL) shouldAutoStop {
+    UIAccelerometer *myAccel = [UIAccelerometer sharedAccelerometer];
+    myAccel.updateInterval = .2; //5 updates per second
+    myAccel.delegate = self;
+}
+
 @end
