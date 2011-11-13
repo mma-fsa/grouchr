@@ -13,7 +13,6 @@
  
  READ ME
 
-
 //CALL THIS TO GET THE SINGLETON INSTANCE
 //E.G.
 
@@ -99,7 +98,7 @@ static GrouchrShakeGesture* sharedInstance = nil;
     [NSTimer scheduledTimerWithTimeInterval: SHAKE_DURATION target:self selector:@selector(didShakeGesture) userInfo:nil repeats:NO];
     
     UIAccelerometer* accell = [UIAccelerometer sharedAccelerometer];
-    accell.updateInterval = 10;
+    accell.updateInterval = .10;
     accell.delegate = self;
 } 
 
