@@ -120,7 +120,7 @@ static GrouchrShakeGesture* sharedInstance = nil;
     float scoreY = MAX(1, 2.0 * MAX(filteredY, 1.0) * .75 * shakesY);
     float scoreZ = MAX(1, 2.0 * MAX(filteredZ, 1.0) * .75 * shakesZ);
     
-    self.lastScore = MAX(MAX(scoreX, scoreY), MAX(scoreY, scoreZ));
+    self.lastScore = floorf(MAX(MAX(scoreX, scoreY), MAX(scoreY, scoreZ)));
     
     if(callbackDelegate) {
         [callbackDelegate didShakeGesture];
