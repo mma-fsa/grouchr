@@ -18,10 +18,10 @@
 		836BA6C31468A2CB00328092 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6C21468A2CB00328092 /* AppDelegate.m */; };
 		836BA6C61468A2CB00328092 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */; };
 		836BA6C91468A2CB00328092 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */; };
-		836BA6CC1468A2CB00328092 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6CB1468A2CB00328092 /* FirstViewController.m */; };
+		836BA6CC1468A2CB00328092 /* NearbyComplaintsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */; };
 		836BA6CE1468A2CB00328092 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6CD1468A2CB00328092 /* first.png */; };
 		836BA6D01468A2CB00328092 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6CF1468A2CB00328092 /* first@2x.png */; };
-		836BA6D31468A2CB00328092 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6D21468A2CB00328092 /* SecondViewController.m */; };
+		836BA6D31468A2CB00328092 /* NewSubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6D21468A2CB00328092 /* NewSubmissionController.m */; };
 		836BA6D51468A2CB00328092 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6D41468A2CB00328092 /* second.png */; };
 		836BA6D71468A2CB00328092 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6D61468A2CB00328092 /* second@2x.png */; };
 		836BA6FB1468A5BF00328092 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6E31468A5BF00328092 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -61,6 +61,7 @@
 		836E29FC146B0C8200E611F2 /* VenueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29FB146B0C8200E611F2 /* VenueParser.m */; };
 		836E29FF146B0FE400E611F2 /* UserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29FE146B0FE400E611F2 /* UserInfoParser.m */; };
 		836E2A03146B258900E611F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E2A02146B258900E611F2 /* Credentials.m */; };
+		836E2A10146EFB5500E611F2 /* UIComplaintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E2A0F146EFB5500E611F2 /* UIComplaintTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +83,12 @@
 		836BA6C21468A2CB00328092 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		836BA6C51468A2CB00328092 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		836BA6C81468A2CB00328092 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		836BA6CA1468A2CB00328092 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		836BA6CB1468A2CB00328092 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		836BA6CA1468A2CB00328092 /* NearbyComplaintsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearbyComplaintsController.h; sourceTree = "<group>"; };
+		836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbyComplaintsController.m; sourceTree = "<group>"; };
 		836BA6CD1468A2CB00328092 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		836BA6CF1468A2CB00328092 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		836BA6D11468A2CB00328092 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		836BA6D21468A2CB00328092 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		836BA6D11468A2CB00328092 /* NewSubmissionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewSubmissionController.h; sourceTree = "<group>"; };
+		836BA6D21468A2CB00328092 /* NewSubmissionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewSubmissionController.m; sourceTree = "<group>"; };
 		836BA6D41468A2CB00328092 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		836BA6D61468A2CB00328092 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		836BA6E21468A5BF00328092 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -165,6 +166,9 @@
 		836E29FE146B0FE400E611F2 /* UserInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoParser.m; sourceTree = "<group>"; };
 		836E2A01146B258900E611F2 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		836E2A02146B258900E611F2 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+		836E2A0D146DC95000E611F2 /* APIResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResponseDelegate.h; sourceTree = "<group>"; };
+		836E2A0E146EFB5400E611F2 /* UIComplaintTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIComplaintTableViewCell.h; sourceTree = "<group>"; };
+		836E2A0F146EFB5500E611F2 /* UIComplaintTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIComplaintTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,14 +204,16 @@
 		27E4F0B91468D6FF0016111D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				836BA6CA1468A2CB00328092 /* FirstViewController.h */,
-				836BA6CB1468A2CB00328092 /* FirstViewController.m */,
-				836BA6D11468A2CB00328092 /* SecondViewController.h */,
-				836BA6D21468A2CB00328092 /* SecondViewController.m */,
+				836BA6CA1468A2CB00328092 /* NearbyComplaintsController.h */,
+				836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */,
+				836BA6D11468A2CB00328092 /* NewSubmissionController.h */,
+				836BA6D21468A2CB00328092 /* NewSubmissionController.m */,
 				836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */,
 				836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */,
 				27E1DC7F146A4B0C007D63F8 /* GrouchrViewController.h */,
 				27E1DC80146A4B0C007D63F8 /* GrouchrViewController.m */,
+				836E2A0E146EFB5400E611F2 /* UIComplaintTableViewCell.h */,
+				836E2A0F146EFB5500E611F2 /* UIComplaintTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				836E29FB146B0C8200E611F2 /* VenueParser.m */,
 				836E29FD146B0FE400E611F2 /* UserInfoParser.h */,
 				836E29FE146B0FE400E611F2 /* UserInfoParser.m */,
+				836E2A0D146DC95000E611F2 /* APIResponseDelegate.h */,
 			);
 			name = ResponseParsers;
 			sourceTree = "<group>";
@@ -467,8 +474,8 @@
 			files = (
 				836BA6BF1468A2CB00328092 /* main.m in Sources */,
 				836BA6C31468A2CB00328092 /* AppDelegate.m in Sources */,
-				836BA6CC1468A2CB00328092 /* FirstViewController.m in Sources */,
-				836BA6D31468A2CB00328092 /* SecondViewController.m in Sources */,
+				836BA6CC1468A2CB00328092 /* NearbyComplaintsController.m in Sources */,
+				836BA6D31468A2CB00328092 /* NewSubmissionController.m in Sources */,
 				836BA6FB1468A5BF00328092 /* ASIAuthenticationDialog.m in Sources */,
 				836BA6FC1468A5BF00328092 /* ASIDataCompressor.m in Sources */,
 				836BA6FD1468A5BF00328092 /* ASIDataDecompressor.m in Sources */,
@@ -504,6 +511,7 @@
 				836E29FF146B0FE400E611F2 /* UserInfoParser.m in Sources */,
 				836E2A03146B258900E611F2 /* Credentials.m in Sources */,
 				27E1DC81146A4B0C007D63F8 /* GrouchrViewController.m in Sources */,
+				836E2A10146EFB5500E611F2 /* UIComplaintTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
 #import "GrouchrModelDelegate.h"
+#import "APIResponseDelegate.h"
 
 @interface DataFetcherResponseHandler : NSObject{
-    NSObject* delegate;
+    NSObject<APIResponseDelegate> *delegate;
     
     NSString* requestType;
     
@@ -31,6 +32,7 @@
 @property(copy,readwrite) NSString* statusMessage;
 @property(copy,readwrite) NSDictionary* payload;
 
+-(id) initWithDelegate:(NSObject<APIResponseDelegate>*) del;
 - (void) requestFinished:(ASIHTTPRequest *) request;
 - (void) requestFailed:(ASIHTTPRequest *) request;
 @end

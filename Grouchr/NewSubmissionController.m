@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "NewSubmissionController.h"
 
-@implementation SecondViewController
+@implementation NewSubmissionController
 
 - (void)didReceiveMemoryWarning
 {

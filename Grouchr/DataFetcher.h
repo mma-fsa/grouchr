@@ -10,5 +10,6 @@
 #import "ASIHTTPRequest.h"
 
 @interface DataFetcher : NSObject
-- (IBAction) postData:(NSString*) url: (NSString*)reqStr :(NSObject*)respHandler;
+- (void) postData:(NSString*) url: (NSString*)reqStr :(NSObject*)respHandler;
+- (void) postDataToAPI:(NSString*) reqStr :(NSObject*)respHandler;
 @end
