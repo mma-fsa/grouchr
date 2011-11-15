@@ -16,8 +16,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.title = NSLocalizedString(@"Nearby", @"Nearby");
+        self.tabBarItem.image = [UIImage imageNamed:@"wordbubbleicon.png"];
         //self.complaintTable = [complaintTable 
     }
     return self;
@@ -105,7 +105,7 @@
     //    
     //    [nearbyComplaintFetcher postData:urlStr :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"GETTHREAD" :[GrouchrAPI buildGetThreadPayload:1]]] :nearbyComplaintUpdateHandler];
 }
-- (void) didAPIRespond{
+- (void) didAPIRespond:(NSObject*) handler{
     NSLog(@"Callback! hooray!");
     
     NSLog(@"Response: %@",[nearbyComplaintUpdateHandler responseString]);

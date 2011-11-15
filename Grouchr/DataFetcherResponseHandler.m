@@ -7,7 +7,7 @@
 //
 
 #import "DataFetcherResponseHandler.h"
-#import "APIResponseParser.h"
+
 
 
 @implementation DataFetcherResponseHandler
@@ -47,7 +47,7 @@
     if(delegate != nil){
         NSLog(@"Calling delegate");
         
-        [delegate didAPIRespond];
+        [delegate didAPIRespond: self];
     }
 }
 - (void) requestFailed:(ASIHTTPRequest *) request{

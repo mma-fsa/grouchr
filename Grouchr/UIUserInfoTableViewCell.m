@@ -1,31 +1,26 @@
 //
-//  UIComplaintTableViewCell.m
+//  UIUserInfoTableViewCell.m
 //  Grouchr
 //
-//  Created by Joel Drotos on 11/12/11.
+//  Created by Joel Drotos on 11/15/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "UIComplaintTableViewCell.h"
+#import "UIUserInfoTableViewCell.h"
 
-@implementation UIComplaintTableViewCell
+@implementation UIUserInfoTableViewCell
 
-@synthesize venueName;
-@synthesize message;
 @synthesize userName;
-@synthesize shakePoints;
-@synthesize childCount;
-@synthesize childShakePoints;
+@synthesize joinDate;
+@synthesize totalSubmissions;
+@synthesize totalShakePoints;
+@synthesize shakePointRank;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-    NSLog(@"initWithStyle");
-    
     if (self) {
         // Initialization code
-        
     }
     return self;
 }

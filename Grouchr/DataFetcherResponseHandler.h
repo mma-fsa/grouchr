@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "GrouchrModelDelegate.h"
 #import "APIResponseDelegate.h"
+#import "APIResponseParser.h"
 
 @interface DataFetcherResponseHandler : NSObject{
     NSObject<APIResponseDelegate> *delegate;
