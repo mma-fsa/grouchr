@@ -15,11 +15,6 @@
 		836BA6B51468A2CB00328092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836BA6B41468A2CB00328092 /* Foundation.framework */; };
 		836BA6B71468A2CB00328092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836BA6B61468A2CB00328092 /* CoreGraphics.framework */; };
 		836BA6BD1468A2CB00328092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6BB1468A2CB00328092 /* InfoPlist.strings */; };
-		836BA6BF1468A2CB00328092 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6BE1468A2CB00328092 /* main.m */; };
-		836BA6C31468A2CB00328092 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6C21468A2CB00328092 /* AppDelegate.m */; };
-		836BA6C61468A2CB00328092 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */; };
-		836BA6C91468A2CB00328092 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */; };
-		836BA6CC1468A2CB00328092 /* NearbyComplaintsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */; };
 		836BA6CE1468A2CB00328092 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6CD1468A2CB00328092 /* first.png */; };
 		836BA6D01468A2CB00328092 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 836BA6CF1468A2CB00328092 /* first@2x.png */; };
 		836BA6D31468A2CB00328092 /* NewSubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836BA6D21468A2CB00328092 /* NewSubmissionController.m */; };
@@ -63,6 +58,13 @@
 		836E29FF146B0FE400E611F2 /* UserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E29FE146B0FE400E611F2 /* UserInfoParser.m */; };
 		836E2A03146B258900E611F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E2A02146B258900E611F2 /* Credentials.m */; };
 		836E2A10146EFB5500E611F2 /* UIComplaintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E2A0F146EFB5500E611F2 /* UIComplaintTableViewCell.m */; };
+		83AFCBCC1471DCBD00039637 /* ComplaintRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AFCBCB1471DCBD00039637 /* ComplaintRowCell.xib */; };
+		83AFCBCF1472BB9500039637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AFCBCE1472BB9500039637 /* AppDelegate.m */; };
+		83AFCBD41472BBAA00039637 /* NearbyComplaintsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AFCBD11472BBAA00039637 /* NearbyComplaintsController.m */; };
+		83AFCBD51472BBAA00039637 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AFCBD31472BBAA00039637 /* SecondViewController.m */; };
+		83AFCBDA1472BBBC00039637 /* NearbyComplaintsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AFCBD61472BBBC00039637 /* NearbyComplaintsController.xib */; };
+		83AFCBDB1472BBBC00039637 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AFCBD81472BBBC00039637 /* SecondViewController.xib */; };
+		83AFCBDD1472BC3200039637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AFCBDC1472BC3200039637 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,14 +82,7 @@
 		836BA6B61468A2CB00328092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		836BA6BA1468A2CB00328092 /* Grouchr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grouchr-Info.plist"; sourceTree = "<group>"; };
 		836BA6BC1468A2CB00328092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		836BA6BE1468A2CB00328092 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		836BA6C01468A2CB00328092 /* Grouchr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grouchr-Prefix.pch"; sourceTree = "<group>"; };
-		836BA6C11468A2CB00328092 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		836BA6C21468A2CB00328092 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		836BA6C51468A2CB00328092 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		836BA6C81468A2CB00328092 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		836BA6CA1468A2CB00328092 /* NearbyComplaintsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearbyComplaintsController.h; sourceTree = "<group>"; };
-		836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbyComplaintsController.m; sourceTree = "<group>"; };
 		836BA6CD1468A2CB00328092 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		836BA6CF1468A2CB00328092 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		836BA6D11468A2CB00328092 /* NewSubmissionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewSubmissionController.h; sourceTree = "<group>"; };
@@ -172,6 +167,16 @@
 		836E2A0D146DC95000E611F2 /* APIResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResponseDelegate.h; sourceTree = "<group>"; };
 		836E2A0E146EFB5400E611F2 /* UIComplaintTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIComplaintTableViewCell.h; sourceTree = "<group>"; };
 		836E2A0F146EFB5500E611F2 /* UIComplaintTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIComplaintTableViewCell.m; sourceTree = "<group>"; };
+		83AFCBCB1471DCBD00039637 /* ComplaintRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComplaintRowCell.xib; sourceTree = "<group>"; };
+		83AFCBCD1472BB9500039637 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		83AFCBCE1472BB9500039637 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		83AFCBD01472BBAA00039637 /* NearbyComplaintsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyComplaintsController.h; sourceTree = "<group>"; };
+		83AFCBD11472BBAA00039637 /* NearbyComplaintsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyComplaintsController.m; sourceTree = "<group>"; };
+		83AFCBD21472BBAA00039637 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		83AFCBD31472BBAA00039637 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		83AFCBD71472BBBC00039637 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NearbyComplaintsController.xib; sourceTree = "<group>"; };
+		83AFCBD91472BBBC00039637 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		83AFCBDC1472BC3200039637 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,12 +222,9 @@
 		27E4F0B91468D6FF0016111D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				836BA6CA1468A2CB00328092 /* NearbyComplaintsController.h */,
-				836BA6CB1468A2CB00328092 /* NearbyComplaintsController.m */,
+				83AFCBBC1471A80600039637 /* NSB */,
 				836BA6D11468A2CB00328092 /* NewSubmissionController.h */,
 				836BA6D21468A2CB00328092 /* NewSubmissionController.m */,
-				836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */,
-				836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */,
 				27E1DC7F146A4B0C007D63F8 /* GrouchrViewController.h */,
 				27E1DC80146A4B0C007D63F8 /* GrouchrViewController.m */,
 				836E2A0E146EFB5400E611F2 /* UIComplaintTableViewCell.h */,
@@ -293,11 +295,11 @@
 		836BA6B81468A2CB00328092 /* Grouchr */ = {
 			isa = PBXGroup;
 			children = (
+				83AFCBCD1472BB9500039637 /* AppDelegate.h */,
+				83AFCBCE1472BB9500039637 /* AppDelegate.m */,
 				27E4F0BA1468D70D0016111D /* Data */,
 				27E4F0B91468D6FF0016111D /* View */,
 				27E4F0B71468D6F90016111D /* Model */,
-				836BA6C11468A2CB00328092 /* AppDelegate.h */,
-				836BA6C21468A2CB00328092 /* AppDelegate.m */,
 				836BA6B91468A2CB00328092 /* Supporting Files */,
 			);
 			path = Grouchr;
@@ -306,10 +308,10 @@
 		836BA6B91468A2CB00328092 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83AFCBDC1472BC3200039637 /* main.m */,
 				27E4F0BB1468D71B0016111D /* images */,
 				836BA6BA1468A2CB00328092 /* Grouchr-Info.plist */,
 				836BA6BB1468A2CB00328092 /* InfoPlist.strings */,
-				836BA6BE1468A2CB00328092 /* main.m */,
 				836BA6C01468A2CB00328092 /* Grouchr-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -418,6 +420,20 @@
 			name = ResponseParsers;
 			sourceTree = "<group>";
 		};
+		83AFCBBC1471A80600039637 /* NSB */ = {
+			isa = PBXGroup;
+			children = (
+				83AFCBD61472BBBC00039637 /* NearbyComplaintsController.xib */,
+				83AFCBD81472BBBC00039637 /* SecondViewController.xib */,
+				83AFCBD01472BBAA00039637 /* NearbyComplaintsController.h */,
+				83AFCBD11472BBAA00039637 /* NearbyComplaintsController.m */,
+				83AFCBD21472BBAA00039637 /* SecondViewController.h */,
+				83AFCBD31472BBAA00039637 /* SecondViewController.m */,
+				83AFCBCB1471DCBD00039637 /* ComplaintRowCell.xib */,
+			);
+			name = NSB;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,12 +485,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				836BA6BD1468A2CB00328092 /* InfoPlist.strings in Resources */,
-				836BA6C61468A2CB00328092 /* MainStoryboard_iPhone.storyboard in Resources */,
-				836BA6C91468A2CB00328092 /* MainStoryboard_iPad.storyboard in Resources */,
 				836BA6CE1468A2CB00328092 /* first.png in Resources */,
 				836BA6D01468A2CB00328092 /* first@2x.png in Resources */,
 				836BA6D51468A2CB00328092 /* second.png in Resources */,
 				836BA6D71468A2CB00328092 /* second@2x.png in Resources */,
+				83AFCBCC1471DCBD00039637 /* ComplaintRowCell.xib in Resources */,
+				83AFCBDA1472BBBC00039637 /* NearbyComplaintsController.xib in Resources */,
+				83AFCBDB1472BBBC00039637 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,9 +502,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836BA6BF1468A2CB00328092 /* main.m in Sources */,
-				836BA6C31468A2CB00328092 /* AppDelegate.m in Sources */,
-				836BA6CC1468A2CB00328092 /* NearbyComplaintsController.m in Sources */,
 				836BA6D31468A2CB00328092 /* NewSubmissionController.m in Sources */,
 				836BA6FB1468A5BF00328092 /* ASIAuthenticationDialog.m in Sources */,
 				836BA6FC1468A5BF00328092 /* ASIDataCompressor.m in Sources */,
@@ -526,6 +540,10 @@
 				27E1DC81146A4B0C007D63F8 /* GrouchrViewController.m in Sources */,
 				836E2A10146EFB5500E611F2 /* UIComplaintTableViewCell.m in Sources */,
 				27E1DC8A146B723B007D63F8 /* GrouchrShakeGesture.m in Sources */,
+				83AFCBCF1472BB9500039637 /* AppDelegate.m in Sources */,
+				83AFCBD41472BBAA00039637 /* NearbyComplaintsController.m in Sources */,
+				83AFCBD51472BBAA00039637 /* SecondViewController.m in Sources */,
+				83AFCBDD1472BC3200039637 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,20 +558,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		836BA6C41468A2CB00328092 /* MainStoryboard_iPhone.storyboard */ = {
+		83AFCBD61472BBBC00039637 /* NearbyComplaintsController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				836BA6C51468A2CB00328092 /* en */,
+				83AFCBD71472BBBC00039637 /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
+			name = NearbyComplaintsController.xib;
 			sourceTree = "<group>";
 		};
-		836BA6C71468A2CB00328092 /* MainStoryboard_iPad.storyboard */ = {
+		83AFCBD81472BBBC00039637 /* SecondViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				836BA6C81468A2CB00328092 /* en */,
+				83AFCBD91472BBBC00039637 /* en */,
 			);
-			name = MainStoryboard_iPad.storyboard;
+			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

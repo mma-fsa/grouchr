@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @interface UIComplaintTableViewCell : UITableViewCell{
-    IBOutlet UILabel *venueName;
-    IBOutlet UILabel *message;
-    IBOutlet UILabel *userName;
-    IBOutlet UILabel *shakePoints;
-    IBOutlet UILabel *childCount;
-    IBOutlet UILabel *childShakePoints;
+    __weak IBOutlet UILabel *venueName;
+    __weak IBOutlet UILabel *message;
+    __weak IBOutlet UILabel *userName;
+    __weak IBOutlet UILabel *shakePoints;
+    __weak IBOutlet UILabel *childCount;
+    __weak IBOutlet UILabel *childShakePoints;
 
 }
 
-@property(copy,readwrite) UILabel* venueName;
-@property(copy,readwrite) UILabel* message;
-@property(copy,readwrite) UILabel* userName;
-@property(copy,readwrite) UILabel* shakePoints;
-@property(copy,readwrite) UILabel* childCount;
-@property(copy,readwrite) UILabel* childShakePoints;
+@property(weak) IBOutlet UILabel* venueName;
+@property(weak) IBOutlet UILabel* message;
+@property(weak) IBOutlet UILabel* userName;
+@property(weak) IBOutlet UILabel* shakePoints;
+@property(weak) IBOutlet UILabel* childCount;
+@property(weak) IBOutlet UILabel* childShakePoints;
 
 
 @end

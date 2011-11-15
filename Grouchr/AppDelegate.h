@@ -1,15 +1,17 @@
 //
 //  AppDelegate.h
-//  Grouchr
+//  nostoryboard2
 //
-//  Created by Joel Drotos on 11/7/11.
+//  Created by Joel Drotos on 11/14/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end

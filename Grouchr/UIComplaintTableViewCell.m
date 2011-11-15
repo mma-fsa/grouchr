@@ -20,8 +20,18 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    NSLog(@"initWithStyle");
+    
     if (self) {
         // Initialization code
+//        venueName = [[UILabel alloc] init];
+//        message = [[UILabel alloc] init];
+//        userName = [[UILabel alloc] init];
+//        shakePoints = [[UILabel alloc] init];
+//        childCount = [[UILabel alloc] init];
+//        childShakePoints = [[UILabel alloc] init];
+        
     }
     return self;
 }
