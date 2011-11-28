@@ -8,25 +8,22 @@
 
 #import "AppDelegate.h"
 
-#import "NearbyComplaintsController.h"
-
-#import "SecondViewController.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    UIViewController *viewController1 = [[NearbyComplaintsController alloc] initWithNibName:@"NearbyComplaintsController" bundle:nil];
-    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
-    self.window.rootViewController = self.tabBarController;
+   
+    GrouchrViewController* grouchrViewController = [[GrouchrViewController alloc] init];
+    CGRect b = self.window.bounds;
+    b.size.height = b.size.height - 50;
+    [grouchrViewController.view setBounds: b];
+    self.window.rootViewController = grouchrViewController; 
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

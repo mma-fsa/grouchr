@@ -15,6 +15,7 @@
 #import "UIComplaintTableViewCell.h"
 #import "APIResponseParser.h"
 #import "GrouchrAPI.h"
+#import "GrouchrViewController.h"
 
 @interface NearbyComplaintsController : UIViewController <APIResponseDelegate, UITableViewDelegate, UITableViewDataSource> {
     

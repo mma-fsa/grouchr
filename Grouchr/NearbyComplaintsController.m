@@ -42,7 +42,7 @@
     nearbyComplaintUpdateHandler = [[DataFetcherResponseHandler alloc] initWithDelegate:self];
     nearbyComplaintFetcher = [[DataFetcher alloc] init];
     
-    
+    [self setTitle: @"Nearby Complaints"];
 }
 
 - (void)viewDidUnload

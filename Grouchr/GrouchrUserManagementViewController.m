@@ -1,20 +1,20 @@
 //
-//  GrouchrViewController.m
+//  GrouchrUserManagementViewController.m
 //  Grouchr
 //
 //  Created by Mike on 11/22/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GrouchrViewController.h"
+#import "GrouchrUserManagementViewController.h"
 
-@implementation GrouchrViewController
-@synthesize tabBarController;
+@implementation GrouchrUserManagementViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -33,13 +33,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [tabBarController.view setFrame: self.view.bounds];
-    [self.view addSubview: tabBarController.view];
 }
 
 - (void)viewDidUnload
 {
-    [self setTabBarController:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
