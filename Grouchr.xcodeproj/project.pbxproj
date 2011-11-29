@@ -10,11 +10,11 @@
 		274FEACF147DDA7F00F09859 /* SubmitComplaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274FEACD147DDA7F00F09859 /* SubmitComplaintViewController.m */; };
 		274FEAD0147DDA7F00F09859 /* SubmitComplaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274FEACE147DDA7F00F09859 /* SubmitComplaintViewController.xib */; };
 		2772B4C7147ECF190064AA18 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2772B4C6147ECF190064AA18 /* UIPlaceHolderTextView.m */; };
+		2779755F1484610C002F8C8C /* MOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 277975581484610C002F8C8C /* MOButton.m */; };
+		277975601484610C002F8C8C /* MOGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755A1484610C002F8C8C /* MOGlassButton.m */; };
+		277975611484610C002F8C8C /* MOUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755C1484610C002F8C8C /* MOUtility.m */; };
+		277975621484610C002F8C8C /* VTPG_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755E1484610C002F8C8C /* VTPG_Common.m */; };
 		278B838C14832385000EBC6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278B838B14832385000EBC6F /* QuartzCore.framework */; };
-		278B8393148323D6000EBC6F /* MOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B8390148323D6000EBC6F /* MOButton.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc "; }; };
-		278B8394148323D6000EBC6F /* MOGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B8392148323D6000EBC6F /* MOGlassButton.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc "; }; };
-		278B83991483256F000EBC6F /* MOUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B83961483256F000EBC6F /* MOUtility.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc "; }; };
-		278B839A1483256F000EBC6F /* VTPG_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B83981483256F000EBC6F /* VTPG_Common.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc "; }; };
 		278B839E148328BF000EBC6F /* NearbyVenuesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B839C148328BF000EBC6F /* NearbyVenuesController.m */; };
 		278B839F148328BF000EBC6F /* NearbyVenuesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 278B839D148328BF000EBC6F /* NearbyVenuesController.xib */; };
 		2795E64114819DF200BB43DC /* ViewUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795E64014819DF200BB43DC /* ViewUtility.m */; };
@@ -92,15 +92,15 @@
 		274FEACE147DDA7F00F09859 /* SubmitComplaintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitComplaintViewController.xib; sourceTree = "<group>"; };
 		2772B4C5147ECF190064AA18 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = Numobi/UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		2772B4C6147ECF190064AA18 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = Numobi/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		277975571484610C002F8C8C /* MOButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOButton.h; path = MOButton/MOButton.h; sourceTree = "<group>"; };
+		277975581484610C002F8C8C /* MOButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOButton.m; path = MOButton/MOButton.m; sourceTree = "<group>"; };
+		277975591484610C002F8C8C /* MOGlassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOGlassButton.h; path = MOButton/MOGlassButton.h; sourceTree = "<group>"; };
+		2779755A1484610C002F8C8C /* MOGlassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOGlassButton.m; path = MOButton/MOGlassButton.m; sourceTree = "<group>"; };
+		2779755B1484610C002F8C8C /* MOUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOUtility.h; path = MOButton/MOUtility.h; sourceTree = "<group>"; };
+		2779755C1484610C002F8C8C /* MOUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOUtility.m; path = MOButton/MOUtility.m; sourceTree = "<group>"; };
+		2779755D1484610C002F8C8C /* VTPG_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPG_Common.h; path = MOButton/VTPG_Common.h; sourceTree = "<group>"; };
+		2779755E1484610C002F8C8C /* VTPG_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTPG_Common.m; path = MOButton/VTPG_Common.m; sourceTree = "<group>"; };
 		278B838B14832385000EBC6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		278B838F148323D6000EBC6F /* MOButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOButton.h; path = "../../../../Downloads/hboon-GlassButtons-92ee372/MOButton.h"; sourceTree = "<group>"; };
-		278B8390148323D6000EBC6F /* MOButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOButton.m; path = "../../../../Downloads/hboon-GlassButtons-92ee372/MOButton.m"; sourceTree = "<group>"; };
-		278B8391148323D6000EBC6F /* MOGlassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOGlassButton.h; path = "../../../../Downloads/hboon-GlassButtons-92ee372/MOGlassButton.h"; sourceTree = "<group>"; };
-		278B8392148323D6000EBC6F /* MOGlassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOGlassButton.m; path = "../../../../Downloads/hboon-GlassButtons-92ee372/MOGlassButton.m"; sourceTree = "<group>"; };
-		278B83951483256F000EBC6F /* MOUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOUtility.h; path = "../../../../Downloads/hboon-MOCommon-3b4f70d/MOUtility.h"; sourceTree = "<group>"; };
-		278B83961483256F000EBC6F /* MOUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOUtility.m; path = "../../../../Downloads/hboon-MOCommon-3b4f70d/MOUtility.m"; sourceTree = "<group>"; };
-		278B83971483256F000EBC6F /* VTPG_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPG_Common.h; path = "../../../../Downloads/hboon-MOCommon-3b4f70d/VTPG_Common.h"; sourceTree = "<group>"; };
-		278B83981483256F000EBC6F /* VTPG_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTPG_Common.m; path = "../../../../Downloads/hboon-MOCommon-3b4f70d/VTPG_Common.m"; sourceTree = "<group>"; };
 		278B839B148328BF000EBC6F /* NearbyVenuesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyVenuesController.h; sourceTree = "<group>"; };
 		278B839C148328BF000EBC6F /* NearbyVenuesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyVenuesController.m; sourceTree = "<group>"; };
 		278B839D148328BF000EBC6F /* NearbyVenuesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyVenuesController.xib; sourceTree = "<group>"; };
@@ -257,14 +257,14 @@
 		278B838E148323BF000EBC6F /* MOButton */ = {
 			isa = PBXGroup;
 			children = (
-				278B83951483256F000EBC6F /* MOUtility.h */,
-				278B83961483256F000EBC6F /* MOUtility.m */,
-				278B83971483256F000EBC6F /* VTPG_Common.h */,
-				278B83981483256F000EBC6F /* VTPG_Common.m */,
-				278B838F148323D6000EBC6F /* MOButton.h */,
-				278B8390148323D6000EBC6F /* MOButton.m */,
-				278B8391148323D6000EBC6F /* MOGlassButton.h */,
-				278B8392148323D6000EBC6F /* MOGlassButton.m */,
+				277975571484610C002F8C8C /* MOButton.h */,
+				277975581484610C002F8C8C /* MOButton.m */,
+				277975591484610C002F8C8C /* MOGlassButton.h */,
+				2779755A1484610C002F8C8C /* MOGlassButton.m */,
+				2779755B1484610C002F8C8C /* MOUtility.h */,
+				2779755C1484610C002F8C8C /* MOUtility.m */,
+				2779755D1484610C002F8C8C /* VTPG_Common.h */,
+				2779755E1484610C002F8C8C /* VTPG_Common.m */,
 			);
 			name = MOButton;
 			sourceTree = "<group>";
@@ -655,11 +655,11 @@
 				274FEACF147DDA7F00F09859 /* SubmitComplaintViewController.m in Sources */,
 				2772B4C7147ECF190064AA18 /* UIPlaceHolderTextView.m in Sources */,
 				2795E64114819DF200BB43DC /* ViewUtility.m in Sources */,
-				278B8393148323D6000EBC6F /* MOButton.m in Sources */,
-				278B8394148323D6000EBC6F /* MOGlassButton.m in Sources */,
-				278B83991483256F000EBC6F /* MOUtility.m in Sources */,
-				278B839A1483256F000EBC6F /* VTPG_Common.m in Sources */,
 				278B839E148328BF000EBC6F /* NearbyVenuesController.m in Sources */,
+				2779755F1484610C002F8C8C /* MOButton.m in Sources */,
+				277975601484610C002F8C8C /* MOGlassButton.m in Sources */,
+				277975611484610C002F8C8C /* MOUtility.m in Sources */,
+				277975621484610C002F8C8C /* VTPG_Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
