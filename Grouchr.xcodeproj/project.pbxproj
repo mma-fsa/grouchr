@@ -10,10 +10,10 @@
 		274FEACF147DDA7F00F09859 /* SubmitComplaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274FEACD147DDA7F00F09859 /* SubmitComplaintViewController.m */; };
 		274FEAD0147DDA7F00F09859 /* SubmitComplaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274FEACE147DDA7F00F09859 /* SubmitComplaintViewController.xib */; };
 		2772B4C7147ECF190064AA18 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2772B4C6147ECF190064AA18 /* UIPlaceHolderTextView.m */; };
-		2779755F1484610C002F8C8C /* MOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 277975581484610C002F8C8C /* MOButton.m */; };
-		277975601484610C002F8C8C /* MOGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755A1484610C002F8C8C /* MOGlassButton.m */; };
-		277975611484610C002F8C8C /* MOUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755C1484610C002F8C8C /* MOUtility.m */; };
-		277975621484610C002F8C8C /* VTPG_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755E1484610C002F8C8C /* VTPG_Common.m */; };
+		2779755F1484610C002F8C8C /* MOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 277975581484610C002F8C8C /* MOButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		277975601484610C002F8C8C /* MOGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755A1484610C002F8C8C /* MOGlassButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		277975611484610C002F8C8C /* MOUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755C1484610C002F8C8C /* MOUtility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		277975621484610C002F8C8C /* VTPG_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2779755E1484610C002F8C8C /* VTPG_Common.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		278B838C14832385000EBC6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278B838B14832385000EBC6F /* QuartzCore.framework */; };
 		278B839E148328BF000EBC6F /* NearbyVenuesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B839C148328BF000EBC6F /* NearbyVenuesController.m */; };
 		278B839F148328BF000EBC6F /* NearbyVenuesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 278B839D148328BF000EBC6F /* NearbyVenuesController.xib */; };
