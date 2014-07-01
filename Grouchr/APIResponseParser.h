@@ -12,15 +12,13 @@
 #import "UserInfo.h"
 
 @interface APIResponseParser : NSObject
-    + (NSDictionary*) parseAPIResponse:(NSString*) respStr;
-
-    + (NSArray*) getComplaintList:(NSDictionary*) payload;
-
-    + (NSArray*) getVenueList:(NSDictionary*) payload;
-
-    + (Credentials*) getCredentials:(NSDictionary*) payload;
-
-    + (NSString*) getFailureCode:(NSDictionary*) payload;
-
-    + (UserInfo*) getUserInfo:(NSDictionary*) payload;
++ (NSDictionary*) parseAPIResponse:(NSString*) respStr;
++ (NSMutableArray*) getComplaintList:(NSDictionary*) payload;
++ (NSMutableArray*) getVenueList:(NSDictionary*) payload;
++ (NSArray*) getThreadList: (NSDictionary*) payload;
++ (NSDictionary*) getSocialNetworkList: (NSDictionary*) payload;
++ (Credentials*) getCredentials:(NSDictionary*) payload;
++ (NSString*) getFailureCode:(NSDictionary*) payload;
++ (UserInfo*) getUserInfo:(NSDictionary*) payload;
+//+ (BOOL) isAuthenticated: (NSDictionary*) payload;
 @end

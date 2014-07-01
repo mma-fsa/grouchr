@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NearbyComplaintsViewController : UITableViewController
+#import "GrouchrModelController.h"
+#import "NearbyComplaintsUITableViewCell.h"
+#import "NearbyComplaintsContentView.h"
+#import "NearbyComplaintsDetailViewController.h"
+#import "ViewUtility.h"
+
+@interface NearbyComplaintsViewController : UITableViewController {
+    NSMutableArray* contentViews;
+    GrouchrModelController* model;
+    BOOL delayLoading;
+    BOOL isUpdatingTable;
+    NSInteger complaintCount;
+    NSInteger numberTableRows;
+}
+- (void) refreshNearbyComplaints;
+- (void) hiddenHandleNextPage: (NSNumber*) numAdded;
 
 @end

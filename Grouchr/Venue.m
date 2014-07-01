@@ -13,5 +13,13 @@
 @synthesize provider;
 @synthesize venueid;
 @synthesize name;
+@synthesize isCustom;
+
+- (id) init {
+    if (self = [super init]) {
+        self.isCustom = NO;
+    }
+    return self;
+}
 
 @end

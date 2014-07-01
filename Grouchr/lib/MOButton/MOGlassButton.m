@@ -130,10 +130,13 @@
 }
 
 - (void)setupAsOrangeButton {
-    [self setBackgroundColor:MO_RGBCOLOR(255,204,0) forState:UIControlStateNormal];
+    [self setBackgroundColor:MO_RGBCOLOR(255,147,39) forState:UIControlStateNormal];
 	[self setBackgroundColor:MO_RGBCOLOR(255, 255, 0) forState:UIControlStateHighlighted];
 	[self setBackgroundColor:MO_RGBCOLOR(255, 255, 204) forState:UIControlStateDisabled];
 	[self setupForStandardButtons];
+    [self setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+    [self setTitleColor: [UIColor blackColor] forState: UIControlStateHighlighted];
+    [self setTitleColor: [UIColor blackColor] forState: UIControlStateDisabled];
 }
 
 - (void)setupAsSmallGreenButton {

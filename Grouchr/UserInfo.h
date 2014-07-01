@@ -9,19 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface UserInfo : NSObject{
-    
-    NSString* username;
-    NSInteger totalsubmissions;
-    NSInteger totalshakepoints;
-    NSString* datejoined;
-    NSInteger shakepointrank;
-    
 }
 
-@property(readwrite) NSInteger totalsubmissions;
-@property(readwrite) NSInteger totalshakepoints;
-@property(readwrite) NSInteger shakepointrank;
-@property(copy,readwrite) NSString* username;
-@property(copy,readwrite) NSString* datejoined;
-
+@property(nonatomic) NSInteger totalsubmissions;
+@property(nonatomic) NSInteger totalshakepoints;
+@property(nonatomic) NSInteger shakepointrank;
+@property(nonatomic, strong) NSString* username;
+@property(copy) NSString* datejoined;
 @end

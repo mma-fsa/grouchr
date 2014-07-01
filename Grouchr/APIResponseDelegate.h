@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataFetcherResponseHandler.h"
 
 @protocol APIResponseDelegate <NSObject>
-- (void) didAPIRespond:(NSObject*) handler;
+
+-(void) didAPIRespond;
+
 @end

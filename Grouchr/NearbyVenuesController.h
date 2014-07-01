@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GrouchrModelController.h"
+#import "AddLocationViewController.h"
+#import "Venue.h"
 
-@interface NearbyVenuesController : UITableViewController
+@interface NearbyVenuesController : UITableViewController {
+    GrouchrModelController* model;
+}
+
+@property (readwrite) BOOL isReply;
 
 @end

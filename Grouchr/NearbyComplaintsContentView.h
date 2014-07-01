@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewUtility.h"
+@interface NearbyComplaintsContentView : UIView <UITextViewDelegate> {
 
-@interface NearbyComplaintsContentView : UIView
+}
+
+@property (strong, readwrite) UILabel* venueLabel;
+@property (strong, readwrite) UILabel* submitterLabel;
+@property (strong, readwrite) UITextView* complaintTextView;
+@property (strong, readwrite) UILabel* pointsLabel;
+@property (strong, readwrite) UILabel* repliesLabel;
+@property (strong, readwrite) UILabel* picturesLabel;
+@property (strong, readwrite) UILabel* noPicturesLabel;
+
+- (void) initLabels;
 
 @end

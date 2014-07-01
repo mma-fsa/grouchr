@@ -9,13 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Venue : NSObject{
-    NSString* provider;
-    NSString* venueid;
-    NSString* name;
 }
 
 @property(copy,readwrite) NSString* provider;
 @property(copy,readwrite) NSString* venueid;
 @property(copy,readwrite) NSString* name;
-
+@property(nonatomic) BOOL isCustom;
 @end

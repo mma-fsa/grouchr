@@ -104,7 +104,10 @@ static GrouchrShakeGesture* sharedInstance = nil;
     
     //set the callback for when the shake gesture's duration has elapsed
     //and we are ready to read the score
-    [NSTimer scheduledTimerWithTimeInterval: SHAKE_DURATION target:self selector:@selector(didShakeGesture) userInfo:nil repeats:NO];
+    if(activeTimer != nil) {
+        [activeTimer invalidate];
+    }
+    activeTimer = [NSTimer scheduledTimerWithTimeInterval: SHAKE_DURATION target:self selector:@selector(didShakeGesture) userInfo:nil repeats:NO];
     
     UIAccelerometer* accell = [UIAccelerometer sharedAccelerometer];
     accell.updateInterval = .10;
@@ -121,6 +124,7 @@ static GrouchrShakeGesture* sharedInstance = nil;
     float scoreZ = MAX(1, 2.0 * MAX(filteredZ, 1.0) * .75 * shakesZ);
     
     self.lastScore = floorf(MAX(MAX(scoreX, scoreY), MAX(scoreY, scoreZ)));
+    activeTimer = nil;
     
     if(callbackDelegate) {
         [callbackDelegate didShakeGesture];

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NearbyComplaintsDetailContentView.h"
 
 @interface NearbyComplaintsDetailUITableViewCell : UITableViewCell
-
+@property (nonatomic, strong) NearbyComplaintsDetailContentView* contentView;
 @end

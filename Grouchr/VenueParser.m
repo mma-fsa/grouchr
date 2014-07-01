@@ -16,6 +16,7 @@
     venue.provider = [json objectForKey:@"PROVIDER"];
     venue.venueid = [json objectForKey:@"ID"];
     venue.name = [json objectForKey:@"NAME"];
+    venue.isCustom = NO;
     
     return venue;
 }

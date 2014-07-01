@@ -9,7 +9,7 @@
 #import "NearbyVenuesController.h"
 
 @implementation NearbyVenuesController
-
+@synthesize isReply;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,11 +33,29 @@
 {
     [super viewDidLoad];
 
+    [self setTitle: @"Select Location"];
+    
+    [self.tableView setBackgroundColor: [ViewUtility getGrayBackgroundColor]];
+
+    model = [GrouchrModelController getInstance];
+    
+    [model addObserver:self forKeyPath:@"nearbyVenues" options:0 context:nil];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)dealloc {
+    [model removeObserver:self forKeyPath:@"nearbyVenues"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([@"nearbyVenues" isEqualToString: keyPath]) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidUnload
@@ -55,6 +73,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -77,28 +96,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    if (section == 0) {                
+        return [[[GrouchrModelController getInstance] nearbyVenues] count] + 1;
+    }
+    
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    static NSString *CustomCellIdentifier = @"CustomCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = nil;
+    
+    if (indexPath.row > 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        Venue* v = [[[GrouchrModelController getInstance] nearbyVenues] objectAtIndex: indexPath.row - 1];
+        cell.textLabel.text = v.name; 
     }
-    
-    // Configure the cell...
+    else if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CustomCellIdentifier];
+            cell.textLabel.text = @"Add Custom Location...";
+            cell.textLabel.font = [UIFont systemFontOfSize: 18.0f];
+            cell.textLabel.textColor = [ViewUtility getOrangeLabelColor];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+    }
     
     return cell;
 }
@@ -146,13 +181,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (indexPath.row > 0) {
+        GrouchrModelController* model = [GrouchrModelController getInstance];
+        if (self.isReply) {
+            model.replyComplaint.venue = [model.nearbyVenues objectAtIndex: indexPath.row - 1];
+        }
+        else {
+            model.submitComplaint.venue = [model.nearbyVenues objectAtIndex: indexPath.row - 1];
+        }        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else if (indexPath.row == 0) {
+        AddLocationViewController* addLocViewController = [[AddLocationViewController alloc] initWithNibName:@"AddLocationViewController" bundle:nil];
+        [self.navigationController pushViewController:addLocViewController animated:YES];
+    }
+   
 }
 
 @end

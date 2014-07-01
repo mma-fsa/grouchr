@@ -7,18 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SubmitComplaint.h"
+#import "Credentials.h"
+#import "SBJsonWriter.h"
 
 @interface GrouchrAPI : NSObject
 
 + (NSString*) jsonize:(NSObject*) obj;
 
-+ (NSObject*) buildJsonRequest:(NSString*) requestType:(NSObject*)jsonString;
-
-+ (NSObject*) buildLoginPayload:(NSString*) username:(NSString*)password;
-
-+ (NSObject*) buildAuthenticatePayload:(NSString*) username:(NSString*)token;
-
-+ (NSObject*) buildNewUserPayload:(NSString*) username:(NSString*)password;
++ (NSObject*) buildJsonRequest:(NSString *)requestType withPayload:(NSObject *)payloadStr withCredentials: (Credentials*) userCredentials;
 
 + (NSObject*) buildNearbyComplaintsPayload:(NSNumber*) lat:(NSNumber*) lon: (NSInteger) page;
 
@@ -31,5 +28,21 @@
 + (NSObject*) buildNearbyVenuesPayload:(NSNumber*) lat:(NSNumber*) lon;
 
 + (NSObject*) buildUserInfoPayload:(NSString*) username;
+
++ (NSObject*) buildSubmitComplaintPayload: (SubmitComplaint*) newComplaint;
+
++ (NSObject*) buildAuthenticationPayloadForUser: (NSString*) username withToken: (NSString*) token;
+
++ (NSObject*) buildLoginPayloadForUser: (NSString*) username withPassword: (NSString*) password;
+
++ (NSObject*) buildNewUserPayloadForUser: (NSString*) username withPassword: (NSString*) password;
+
++ (NSObject*) buildAddSocialNetworkFacebookPayload: (NSString*)token withExpiration: (NSNumber*) expiration;
+
++ (NSObject*) buildAddSocialNetworkTwitterPayload: (NSString*)token withSecretToken: (NSString*) secretToken;
+
++ (NSObject*) buildRemoveSocialNetworkFacebookPayload;
+
++ (NSObject*) buildRemoveSocialNetworkTwitterPayload;
 
 @end

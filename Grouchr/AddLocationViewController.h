@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewUtility.h"
+#import "MOGlassButton.h"
+#import "GrouchrModelController.h"
 
-@interface AddLocationViewController : UITableViewController
+@interface AddLocationViewController : UITableViewController <UITextFieldDelegate> {
+    UITextField* locationNameTextField;
+}
 
+- (BOOL) validateVenueName;
+
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @end

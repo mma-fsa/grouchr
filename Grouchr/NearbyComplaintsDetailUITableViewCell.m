@@ -9,6 +9,7 @@
 #import "NearbyComplaintsDetailUITableViewCell.h"
 
 @implementation NearbyComplaintsDetailUITableViewCell
+@synthesize contentView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

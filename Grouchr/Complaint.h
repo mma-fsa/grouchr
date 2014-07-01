@@ -40,6 +40,7 @@
 @property(readwrite) NSInteger childshakepoints;
 @property(readwrite) NSInteger childcount;
 
+@property(nonatomic) BOOL hasImage;
 @property(copy,readwrite) NSString* imageurl_small;
 @property(copy,readwrite) NSString* imageurl_medium;
 @property(copy,readwrite) NSString* imageurl_large;

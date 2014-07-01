@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NearbyComplaintsContentView.h"
 @interface NearbyComplaintsUITableViewCell : UITableViewCell
+
+@property (strong) NearbyComplaintsContentView* nearbyContent;
 
 @end

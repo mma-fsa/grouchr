@@ -86,13 +86,13 @@
 -(void) doFetchUserInfo{
 
     NSLog(@"doFetchUserInfo");
-    [apiFetcher postDataToAPI :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERINFO" :[GrouchrAPI buildUserInfoPayload:@"whiskeyjoe"]]] :userInfoUpdateHandler];
+    //[apiFetcher postDataToAPI :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERINFO" :[GrouchrAPI buildUserInfoPayload:@"whiskeyjoe"]]] :userInfoUpdateHandler];
     
 }
 
 -(void) doFetchUserComps{
     NSLog(@"doFetchUserComps");
-    [apiFetcher postDataToAPI :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERCOMPLAINTS" :[GrouchrAPI buildUserComplaintsPayload:@"whiskeyjoe":0]]] :userComplaintUpdateHandler];
+    //[apiFetcher postDataToAPI :[GrouchrAPI jsonize:[GrouchrAPI buildJsonRequest:@"USERCOMPLAINTS" :[GrouchrAPI buildUserComplaintsPayload:@"whiskeyjoe":0]]] :userComplaintUpdateHandler];
 }
 
 - (void) didAPIRespond:(NSObject*) handler{
@@ -194,13 +194,15 @@
         if(userComplaints != nil){
             Complaint* tComp = [userComplaints objectAtIndex:indexPath.row];
             if(tComp != nil){
+                /*
                 cell.venueName.text = [tComp venuename];
                 cell.message.text = [tComp message];
                 cell.userName.text = [tComp username];
                 cell.shakePoints.text = [NSString stringWithFormat:@"%i",[tComp shakepoints]];
                 cell.childCount.text = [NSString stringWithFormat:@"%i",[tComp childcount]];
                 cell.childShakePoints.text = [NSString stringWithFormat:@"%i",[tComp childshakepoints]];
-            }
+            */
+                }
         }
         return cell;
     }else{

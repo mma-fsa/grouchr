@@ -20,7 +20,7 @@
     return resp;
 }
 
-+ (NSArray*) getComplaintList:(NSDictionary *)payload{
++ (NSMutableArray*) getComplaintList:(NSDictionary *)payload{
     NSMutableArray* comps = [[NSMutableArray alloc] init];
     NSArray *jsonComps = [payload objectForKey:@"COMPLAINT_LIST"];
     
@@ -31,7 +31,18 @@
     return comps;
 }
 
-+ (NSArray*) getVenueList:(NSDictionary *)payload{
++ (NSArray*) getThreadList:(NSDictionary *)payload {
+    NSMutableArray* threads = [[NSMutableArray alloc] init];
+    NSArray* jsonThread = [payload objectForKey: @"COMPLAINT_LIST"];
+    
+    for(NSDictionary* jsonComp in jsonThread) {
+        [threads addObject: [ComplaintParser parseComplaint:jsonComp]];
+    }
+    
+    return threads;
+}
+
++ (NSMutableArray*) getVenueList:(NSDictionary *)payload{
     NSMutableArray* venues = [[NSMutableArray alloc] init];
     
     NSArray *jsonVenues = [payload objectForKey:@"VENUE_LIST"];
@@ -41,6 +52,19 @@
     }
     
     return venues;
+}
+
++ (NSDictionary*) getSocialNetworkList:(NSDictionary *)payload {
+    NSMutableDictionary* socialNetworkInfo = [[NSMutableDictionary alloc] init];
+    NSArray* networkData = [payload objectForKey: @"SOCIAL_NETWORKS"];
+    
+    //convert list to dictionary
+    for(NSDictionary* networkInfo in networkData) {
+        NSString* service_name = [networkInfo objectForKey: @"SERVICE"];
+        NSString* err_msg = [networkInfo objectForKey: @"ERROR_MESSAGE"];
+        [socialNetworkInfo setObject:err_msg forKey:service_name];
+    }
+    return socialNetworkInfo;
 }
 
 //Get the failure code from a login/auth request

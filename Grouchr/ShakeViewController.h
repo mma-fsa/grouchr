@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ShakeViewController : UIViewController
-
+#import "GrouchrModelController.h"
+#import "ViewUtility.h"
+@interface ShakeViewController : UIViewController {
+    BOOL didCancelShake;
+}
+@property (readwrite) BOOL isReply;
+- (void) shakeGestureDone;
 @end

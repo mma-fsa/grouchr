@@ -22,6 +22,8 @@
     BOOL lastXPositive;
     BOOL lastYPositive;
     BOOL lastZPositive;
+    
+    NSTimer* activeTimer;
 }
 
 +(GrouchrShakeGesture*) sharedInstance;

@@ -8,6 +8,35 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OptionsViewController : UITableViewController
+#import "GrouchrModelController.h"
+#import "GrouchrViewController.h"
+#import "ViewUtility.h"
+
+#import "MOButton.h"
+#import "MOGlassButton.h"
+
+@interface OptionsViewController : UITableViewController {
+    GrouchrModelController* model;
+    GrouchrViewController* viewController;
+    UIButton* grouchrButton;
+    
+    UIActivityIndicatorView* facebookActivity;
+    UIButton* facebookButton;
+    BOOL facebookUpdating;
+    
+    UIActivityIndicatorView* twitterActivity;
+    UIButton* twitterButton;
+    BOOL twitterUpdating;
+    
+    BOOL loadingControllerActive;
+    NSTimer* loadingControllerTimer;
+}
+
+- (void) hiddenDidGrouchrButtonClick;
+- (void) hiddenDidFacebookButtonClick;
+- (void) hiddenDidTwitterButtonClick;
+
+- (void) hiddenDidFacebookUpdate;
+- (void) hiddenDidTwitterUpdate;
 
 @end

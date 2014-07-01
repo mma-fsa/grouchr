@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Credentials : NSObject{
-    NSString* username;
-    NSString* token;
-}
+@interface Credentials : NSObject{}
 
-@property(copy,readwrite) NSString* username;
-@property(copy,readwrite) NSString* token;
+@property(nonatomic, strong) NSString* username;
+@property(nonatomic, strong) NSString* password;
+@property(nonatomic, strong) NSString* token;
 
 @end

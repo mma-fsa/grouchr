@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Credentials.h"
 
-@interface GrouchrUserPreferences : NSObject
+@interface GrouchrUserData : NSObject {
+    NSUserDefaults* userDefaults;
+}
+    
+- (Credentials*) storedCredentials; 
+- (void) setStoredCredentials: (Credentials*) credentialsToStore; 
 
 @end

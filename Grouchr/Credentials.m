@@ -10,5 +10,6 @@
 
 @implementation Credentials
     @synthesize username;
+    @synthesize password;
     @synthesize token;
 @end

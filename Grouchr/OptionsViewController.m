@@ -10,13 +10,35 @@
 
 @implementation OptionsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder: aDecoder];
     if (self) {
-        // Custom initialization
+        model = [GrouchrModelController getInstance];
+        [model addObserver:self forKeyPath:@"canPostToFacebook" options:0 context:nil];
+        [model addObserver:self forKeyPath:@"canPostToTwitter" options:0 context:nil];
+        [model addObserver:self forKeyPath:@"didGetSocialNetworks" options:0 context:nil];
+        viewController = [GrouchrViewController getInstance];
     }
     return self;
+}
+
+- (void)dealloc {
+    [model removeObserver:self forKeyPath:@"canPostToFacebook"];
+    [model removeObserver:self forKeyPath:@"canPostToTwitter"];
+    [model removeObserver:self forKeyPath:@"didGetSocialNetworks"];
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if ([keyPath isEqualToString: @"canPostToFacebook"]) {
+        facebookUpdating = NO;
+    }
+    else if ([keyPath isEqualToString: @"canPostToTwitter"]) {
+        twitterUpdating = NO;
+    }
+    // don't need to handle didGetSocialNetworks, we just want a table reload
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -27,12 +49,55 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark - Button Handlers
+
+- (void) hiddenDidFacebookButtonClick {
+    if (model.canPostToFacebook) {
+        facebookUpdating = YES;
+        [self.tableView reloadData];
+        [model startFacebookLogout:self withSelector:@selector(hiddenDidFacebookUpdate)];
+    }
+    else {
+        [model startFacebookAuthentication:self withSelector:@selector(hiddenDidFacebookUpdate)];
+    }
+}
+
+- (void) hiddenDidFacebookUpdate {
+    facebookUpdating = NO;
+    [self.tableView reloadData];
+}
+
+- (void) hiddenDidGrouchrButtonClick {
+    if (model.hasValidToken) {
+        [model startLogout:nil withSelector: nil];
+    }
+}
+
+- (void) hiddenDidTwitterButtonClick {
+    if (model.canPostToTwitter) {
+        twitterUpdating = YES;
+        [self.tableView reloadData];
+        [model startTwitterLogout:self withSelector:@selector(hiddenDidTwitterUpdate)];
+    }
+    else {
+        [model startTwitterAuthentication:self withSelector:@selector(hiddenDidTwitterUpdate)];
+    }
+}
+
+- (void) hiddenDidTwitterUpdate {
+    twitterUpdating = NO;
+    [self.tableView reloadData];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    [self setTitle: @"Options"];
+    self.tableView.backgroundColor = [ViewUtility getGrayBackgroundColor];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -47,9 +112,31 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	// create the parent view that will hold header Label
+	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
+	
+	// create the button object
+	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+	
+	headerLabel.opaque = NO;
+	headerLabel.textColor = [UIColor lightGrayColor];
+	headerLabel.font = [UIFont boldSystemFontOfSize: 16];
+    headerLabel.backgroundColor = [UIColor clearColor];
+	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
+    
+	headerLabel.text = [self tableView: tableView titleForHeaderInSection:section];
+    
+	[customView addSubview:headerLabel];
+    
+	return customView;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -75,30 +162,146 @@
 
 #pragma mark - Table view data source
 
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Grouchr Login Options";
+    }
+    else if (section == 1) {
+        return @"Facebook Login Options";
+    }
+    else if (section == 2) {
+        return @"Twitter Login Options";
+    }
+    return nil;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
+    if (0 <= section && section < 3) {
+        return 1;
+    }
+    
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *credentialOptionsIdentifier = @"credentialOptionsCell";
+    static NSString *facebookOptionsIdentifier = @"facebookOptionsIdentifier";
+    static NSString *twitterOptionsIdentifier = @"twitterOptionsIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = nil;
+   
+    if (indexPath.section == 0 && indexPath.row == 0) {
+    
+        cell = [tableView dequeueReusableCellWithIdentifier: credentialOptionsIdentifier];
+        
+        if (cell == nil) {
+            
+            MOGlassButton* b = [[MOGlassButton alloc] initWithFrame: CGRectMake(0, 0, 100, 35)];
+            [b setupAsOrangeButton];
+            
+            grouchrButton = b;
+            [grouchrButton addTarget:self action:@selector(hiddenDidGrouchrButtonClick) forControlEvents:UIControlEventTouchUpInside];
+            [grouchrButton setFont: [UIFont boldSystemFontOfSize: 16.0f]];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:credentialOptionsIdentifier];
+            
+            cell.accessoryView = grouchrButton;
+        }
+        
+        if (model.hasValidToken == YES) {
+            cell.textLabel.text = model.userCredentials.username;
+            [grouchrButton setTitle:@"Logout" forState:UIControlStateNormal];
+        }
+        else {
+            cell.detailTextLabel.text = @"";
+            [grouchrButton setTitle:@"Login" forState:UIControlStateNormal];
+        }
+        
+    }
+    else if (indexPath.section == 1 && indexPath.row == 0) {
+        
+        cell = [tableView dequeueReusableCellWithIdentifier: facebookOptionsIdentifier];
+        
+        if (cell == nil) {
+            
+            MOGlassButton* b = [[MOGlassButton alloc] initWithFrame: CGRectMake(0, 0, 100, 35)];
+            [b setupAsOrangeButton];
+            
+            facebookButton = b;
+            [facebookButton addTarget:self action:@selector(hiddenDidFacebookButtonClick) forControlEvents:UIControlEventTouchUpInside];
+            [facebookButton.titleLabel setTextAlignment: UITextAlignmentCenter];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:facebookOptionsIdentifier];
+            [facebookButton setFont: [UIFont boldSystemFontOfSize: 16.0f]];
+            
+            facebookActivity = [[UIActivityIndicatorView alloc] init];
+            facebookActivity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+            facebookActivity.frame = CGRectMake(0, 0, 100, 35);
+        }
+        
+        if (model.didGetSocialNetworks == NO || twitterUpdating || facebookUpdating) {
+            cell.accessoryView = facebookActivity;
+            cell.textLabel.text = @"Updating...";
+            [facebookActivity startAnimating];
+        }
+        else if (model.canPostToFacebook) {
+            cell.accessoryView = facebookButton;
+            [facebookButton setTitle:@"Logout" forState:UIControlStateNormal];
+            cell.textLabel.text = @"Logged in";
+        }
+        else {
+            cell.accessoryView = facebookButton;
+            [facebookButton setTitle:@"Login" forState:UIControlStateNormal];
+            cell.textLabel.text = @"Logged out";
+        }
+        
+    }
+    else if (indexPath.section == 2 && indexPath.row == 0) {
+        
+        cell = [tableView dequeueReusableCellWithIdentifier: twitterOptionsIdentifier];
+        
+        if (cell == nil) {
+            
+            MOGlassButton* b = [[MOGlassButton alloc] initWithFrame: CGRectMake(0, 0, 100, 35)];
+            [b setupAsOrangeButton];
+            
+            twitterButton = b;
+            [twitterButton addTarget:self action:@selector(hiddenDidTwitterButtonClick) forControlEvents:UIControlEventTouchUpInside];
+            [twitterButton.titleLabel setTextAlignment: UITextAlignmentCenter];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:twitterOptionsIdentifier];
+            [twitterButton setFont: [UIFont boldSystemFontOfSize: 16.0f]];
+            
+            twitterActivity = [[UIActivityIndicatorView alloc] init];
+            twitterActivity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+            twitterActivity.frame = CGRectMake(0, 0, 100, 35);
+        }
+
+        if (model.didGetSocialNetworks == NO || twitterUpdating || facebookUpdating) {
+            cell.textLabel.text = @"Updating...";
+            cell.accessoryView = twitterActivity;
+            [twitterActivity startAnimating];
+        }
+        else if (model.canPostToTwitter) {
+            [twitterButton setTitle:@"Logout" forState:UIControlStateNormal];
+            cell.textLabel.text = @"Logged in";
+            cell.accessoryView = twitterButton;
+        }
+        else {
+            [twitterButton setTitle:@"Login" forState:UIControlStateNormal];
+            cell.textLabel.text = @"Logged out";
+            cell.accessoryView = twitterButton;
+        }
     }
     
-    // Configure the cell...
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     
     return cell;
 }

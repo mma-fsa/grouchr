@@ -18,6 +18,9 @@
 @synthesize childshakepoints;
 @synthesize childcount;
 
+//BOOLs
+@synthesize hasImage;
+
 //strings
 @synthesize venuename;
 @synthesize username;

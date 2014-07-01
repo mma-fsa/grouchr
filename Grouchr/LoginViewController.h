@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOGlassButton.h"
+#import "CreateUserViewController.h"
+#import "ViewUtility.h"
+#import "GrouchrModelController.h"
 
-@interface LoginViewController : UITableViewController
+@interface LoginViewController : UITableViewController<UITextFieldDelegate> {
+    NSString* password;
+    GrouchrModelController* model;
+    UITextField* txtUsername;
+    UITextField* txtPassword;
+}
 
+- (void) createUserClicked;
+- (void) loginClicked;
 @end
